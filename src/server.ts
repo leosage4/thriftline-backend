@@ -1,6 +1,7 @@
 import { app } from './app';
-import { env } from './config/env';
 
-app.listen(env.port, () => {
-  console.log(`ThriftLine backend running at http://localhost:${env.port}`);
+const port = Number(process.env.PORT ?? process.env.port ?? 3000);
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`ThriftLine backend running on port ${port}`);
 });
